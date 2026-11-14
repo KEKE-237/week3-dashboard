@@ -1,0 +1,183 @@
+/* ── Reset & base ─────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #e90808;
+  --white: #fff;
+  --gray: #e8e8e8;
+  --mid: #0e25f5;
+  --border: 2px solid #0a1fdb;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background: var(--white);
+  color: var(--black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+header {
+  border-bottom: var(--border);
+  padding: 1.5rem 2rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: var(--mid);
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* ── Main ─────────────────────────────────────────────────────────────────── */
+main {
+  flex: 1;
+  padding: 1.5rem 2rem;
+}
+
+/* ── Toolbar ──────────────────────────────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+#search {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  border: var(--border);
+  background: var(--white);
+  color: var(--black);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+#search:focus {
+  background: var(--gray);
+}
+
+#retry {
+  padding: 0.55rem 1rem;
+  border: var(--border);
+  background: var(--black);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+#retry:hover {
+  background: var(--mid);
+}
+
+/* ── Stats bar ────────────────────────────────────────────────────────────── */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--black);
+  background: var(--gray);
+  font-size: 0.85rem;
+}
+
+/* ── Loading / Error / Empty ─────────────────────────────────────────────── */
+#loading {
+  font-style: italic;
+  color: var(--mid);
+  margin-bottom: 1rem;
+}
+
+.error {
+  border: var(--border);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: var(--gray);
+}
+
+.empty {
+  grid-column: 1 / -1;
+  color: var(--mid);
+  font-style: italic;
+}
+
+/* ── Grid ─────────────────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--black);
+}
+
+/* ── Card ─────────────────────────────────────────────────────────────────── */
+.card {
+  padding: 1.25rem;
+  border: 1px solid var(--black);
+  background: var(--white);
+  transition: background 0.15s;
+}
+
+.card:hover {
+  background: var(--gray);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.condition {
+  font-size: 0.85rem;
+  color: var(--mid);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 0.5rem;
+}
+
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.label {
+  color: var(--mid);
+}
+.value {
+  font-weight: bold;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+footer {
+  border-top: var(--border);
+  padding: 0.75rem 2rem;
+  font-size: 0.8rem;
+  color: var(--mid);
+}
+
+footer a {
+  color: var(--black);
+}
